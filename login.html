@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Neewie | Login</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=DM+Serif+Display:ital@0;1&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body class="app-shell" data-page="login" data-logged-in="false">
+    <header class="app-nav">
+      <div class="nav-inner">
+        <a class="brand-mark" href="index.html" aria-label="Neewie home">
+          <span class="brand-dot" aria-hidden="true"></span>
+          <span>Neewie</span>
+        </a>
+
+        <nav class="nav-links" aria-label="Main navigation">
+          <a class="listings-nav-link" data-nav-link="home" href="index.html">Home</a>
+          <a class="listings-nav-link" data-nav-link="login" data-guest-link href="login.html">Login</a>
+          <a class="listings-nav-link" data-nav-link="register" data-guest-link href="register.html">Register</a>
+          <a class="listings-nav-link hidden" data-nav-link="create" data-auth-link href="create.html">Create Article</a>
+          <button class="btn-secondary hidden" type="button" data-auth-link data-logout-button>
+            Log out
+          </button>
+        </nav>
+      </div>
+    </header>
+
+    <main class="container-main">
+      <section class="split-layout">
+        <div class="section-card form-card">
+          <span class="badge">Account access</span>
+          <h1 class="page-heading">Sign in to Neewie</h1>
+          <p class="page-subtitle">
+            Use your account to browse articles and publish your own stories after login.
+          </p>
+
+          <div class="alert alert-info" id="login-message">Enter your email and password to sign in.</div>
+
+          <form class="stack" id="login-form">
+            <div>
+              <label class="label" for="login-email">Email</label>
+              <input class="input" id="login-email" name="email" type="email" placeholder="name@example.com" />
+            </div>
+
+            <div>
+              <label class="label" for="login-password">Password</label>
+              <input
+                class="input"
+                id="login-password"
+                name="password"
+                type="password"
+                placeholder="Enter your password"
+              />
+            </div>
+
+            <button class="btn-primary" type="submit">Log in</button>
+            <p class="helper-copy">New here? <a class="lot-link" href="register.html">Create an account</a>.</p>
+          </form>
+        </div>
+
+        <aside class="section-card form-card">
+          <h2 class="page-heading">Before you sign in</h2>
+          <p class="muted-copy">
+            After registration, the user should confirm their email before logging in.
+          </p>
+          <div class="empty-state">
+            If something goes wrong, a simple message will appear above the form.
+          </div>
+        </aside>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="site-footer-inner">Neewie keeps the login flow simple and easy to explain.</div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="js/ui.js"></script>
+    <script src="js/supabase.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/header.js"></script>
+    <script src="js/login.js"></script>
+  </body>
+</html>

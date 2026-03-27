@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Neewie | Register</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=DM+Serif+Display:ital@0;1&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body class="app-shell" data-page="register" data-logged-in="false">
+    <header class="app-nav">
+      <div class="nav-inner">
+        <a class="brand-mark" href="index.html" aria-label="Neewie home">
+          <span class="brand-dot" aria-hidden="true"></span>
+          <span>Neewie</span>
+        </a>
+
+        <nav class="nav-links" aria-label="Main navigation">
+          <a class="listings-nav-link" data-nav-link="home" href="index.html">Home</a>
+          <a class="listings-nav-link" data-nav-link="login" data-guest-link href="login.html">Login</a>
+          <a class="listings-nav-link" data-nav-link="register" data-guest-link href="register.html">Register</a>
+          <a class="listings-nav-link hidden" data-nav-link="create" data-auth-link href="create.html">Create Article</a>
+          <button class="btn-secondary hidden" type="button" data-auth-link data-logout-button>
+            Log out
+          </button>
+        </nav>
+      </div>
+    </header>
+
+    <main class="container-main">
+      <section class="split-layout">
+        <div class="section-card form-card">
+          <span class="badge">Create account</span>
+          <h1 class="page-heading">Register for Neewie</h1>
+          <p class="page-subtitle">
+            Create a simple account first, then confirm your email before you log in.
+          </p>
+
+          <div class="alert alert-info" id="register-message">Create an account and then confirm your email.</div>
+
+          <form class="stack" id="register-form">
+            <div>
+              <label class="label" for="register-name">Display name</label>
+              <input class="input" id="register-name" name="name" type="text" placeholder="Your name" />
+            </div>
+
+            <div>
+              <label class="label" for="register-email">Email</label>
+              <input
+                class="input"
+                id="register-email"
+                name="email"
+                type="email"
+                placeholder="name@example.com"
+              />
+            </div>
+
+            <div>
+              <label class="label" for="register-password">Password</label>
+              <input
+                class="input"
+                id="register-password"
+                name="password"
+                type="password"
+                placeholder="Choose a password"
+              />
+              <p class="helper-copy">Keep it simple for the project, but still use a real password.</p>
+            </div>
+
+            <button class="btn-primary" type="submit">Register</button>
+            <p class="helper-copy">Already registered? <a class="lot-link" href="login.html">Go to login</a>.</p>
+          </form>
+        </div>
+
+        <aside class="section-card form-card">
+          <h2 class="page-heading">Email confirmation</h2>
+          <p class="muted-copy">
+            The user flow for this project is register, confirm email, log in, then create an
+            article.
+          </p>
+          <div class="empty-state">
+            After registration, the user should check their inbox and confirm the account.
+          </div>
+        </aside>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="site-footer-inner">Neewie uses a calm and clear registration flow.</div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="js/ui.js"></script>
+    <script src="js/supabase.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/header.js"></script>
+    <script src="js/register.js"></script>
+  </body>
+</html>

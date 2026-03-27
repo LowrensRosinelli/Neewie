@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Neewie | Create Article</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=DM+Serif+Display:ital@0;1&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body class="app-shell" data-page="create" data-logged-in="false">
+    <header class="app-nav">
+      <div class="nav-inner">
+        <a class="brand-mark" href="index.html" aria-label="Neewie home">
+          <span class="brand-dot" aria-hidden="true"></span>
+          <span>Neewie</span>
+        </a>
+
+        <nav class="nav-links" aria-label="Main navigation">
+          <a class="listings-nav-link" data-nav-link="home" href="index.html">Home</a>
+          <a class="listings-nav-link" data-nav-link="login" data-guest-link href="login.html">Login</a>
+          <a class="listings-nav-link" data-nav-link="register" data-guest-link href="register.html">Register</a>
+          <a class="listings-nav-link hidden" data-nav-link="create" data-auth-link href="create.html">Create Article</a>
+          <button class="btn-secondary hidden" type="button" data-auth-link data-logout-button>
+            Log out
+          </button>
+        </nav>
+      </div>
+    </header>
+
+    <main class="container-main">
+      <section class="split-layout">
+        <div class="section-card form-card">
+          <span class="badge">Protected page</span>
+          <h1 class="page-heading">Create a new article</h1>
+          <p class="page-subtitle">
+            This page is for logged in users who want to publish a new article.
+          </p>
+
+          <div class="alert alert-error" id="create-auth-message">
+            You need to be logged in to publish an article.
+          </div>
+
+          <form class="stack hidden" id="create-form">
+            <div>
+              <label class="label" for="article-title">Title</label>
+              <input
+                class="input"
+                id="article-title"
+                name="title"
+                type="text"
+                placeholder="Write a short title"
+              />
+            </div>
+
+            <div>
+              <label class="label" for="article-category">Category</label>
+              <select class="input" id="article-category" name="category">
+                <option value="">Select a category</option>
+                <option value="World">World</option>
+                <option value="Tech">Tech</option>
+                <option value="Culture">Culture</option>
+                <option value="Local">Local</option>
+              </select>
+            </div>
+
+            <div>
+              <label class="label" for="article-body">Article text</label>
+              <textarea
+                class="input"
+                id="article-body"
+                name="body"
+                placeholder="Write your article here"
+              ></textarea>
+            </div>
+
+            <button class="btn-primary" type="submit">Publish article</button>
+            <p class="helper-copy">Choose a category and keep the article clear and simple.</p>
+          </form>
+        </div>
+
+        <aside class="section-card form-card">
+          <h2 class="page-heading">How this page will work</h2>
+          <p class="muted-copy">
+            This page checks the current session and only shows the form to logged in users.
+          </p>
+          <div class="empty-state">
+            Logged out users are sent to the login page before they can publish.
+          </div>
+        </aside>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="site-footer-inner">Neewie keeps article creation direct and easy to follow.</div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="js/ui.js"></script>
+    <script src="js/supabase.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/header.js"></script>
+    <script src="js/create.js"></script>
+  </body>
+</html>

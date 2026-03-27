@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Neewie | Latest stories</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=DM+Serif+Display:ital@0;1&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body class="app-shell" data-page="home" data-logged-in="false">
+    <header class="app-nav">
+      <div class="nav-inner">
+        <a class="brand-mark" href="index.html" aria-label="Neewie home">
+          <span class="brand-dot" aria-hidden="true"></span>
+          <span>Neewie</span>
+        </a>
+
+        <nav class="nav-links" aria-label="Main navigation">
+          <a class="listings-nav-link" data-nav-link="home" href="index.html">Home</a>
+          <a class="listings-nav-link" data-nav-link="login" data-guest-link href="login.html">Login</a>
+          <a class="listings-nav-link" data-nav-link="register" data-guest-link href="register.html">Register</a>
+          <a class="listings-nav-link hidden" data-nav-link="create" data-auth-link href="create.html">Create Article</a>
+          <button class="btn-secondary hidden" type="button" data-auth-link data-logout-button>
+            Log out
+          </button>
+        </nav>
+      </div>
+    </header>
+
+    <main class="container-main">
+      <section class="section-card hero-section">
+        <div class="hero-copy">
+          <span class="badge">Student news project</span>
+          <h1 class="page-title">Latest stories from Neewie</h1>
+          <p class="page-subtitle">
+            Browse recent articles, read short updates, and sign in if you want to publish your
+            own story later.
+          </p>
+        </div>
+
+        <div class="hero-meta">
+          <a class="btn-primary" data-guest-link href="register.html">Create an account</a>
+          <a class="btn-secondary" data-guest-link href="login.html">Sign in</a>
+          <a class="btn-primary hidden" data-auth-link href="create.html">Write an article</a>
+        </div>
+      </section>
+
+      <section class="stack">
+        <div class="section-header">
+          <div>
+            <h2 class="page-heading">Browse recent articles</h2>
+            <p class="muted-copy">Recent articles from the Neewie community.</p>
+          </div>
+          <span class="badge">Public page</span>
+        </div>
+
+        <div class="alert alert-info" id="articles-message">Loading articles...</div>
+
+        <div class="lot-grid" id="article-list"></div>
+
+        <div class="empty-state hidden" id="articles-empty">
+          No articles have been published yet.
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="site-footer-inner">Neewie is a simple student news frontend built with HTML, CSS, and JavaScript.</div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="js/ui.js"></script>
+    <script src="js/supabase.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/header.js"></script>
+    <script src="js/articles.js"></script>
+  </body>
+</html>
