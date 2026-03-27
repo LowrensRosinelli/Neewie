@@ -2,6 +2,8 @@
 
 Simple article/news platform built with HTML, CSS, JavaScript, and Supabase.
 
+https://lowrensrosinelli.github.io/Neewie/
+
 ## What the project does
 
 * Users can register and log in with email confirmation
