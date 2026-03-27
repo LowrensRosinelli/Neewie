@@ -1,31 +1,46 @@
 # Neewie
 
-Neewie is a simple news/article platform built as a student project using HTML, CSS, JavaScript, and Supabase.
+Simple article/news platform built with HTML, CSS, JavaScript, and Supabase.
+
+## What the project does
+
+* Users can register and log in with email confirmation
+* Authentication state is handled with Supabase
+* Logged-in users can create articles
+* All users can view articles on the homepage
+* UI updates based on whether the user is logged in or not
+* Articles are fetched from Supabase and rendered dynamically
 
 ## Features
 
-* Register and login with email confirmation
+* User authentication (register / login)
+* Email confirmation
 * Create articles (only when logged in)
-* View articles on homepage
+* View articles (available to everyone)
 * Auth-based navigation
-* Data stored in Supabase
+* Simple loading states and error messages
 
-## Tech
+## Tech used
 
 * HTML
 * CSS
 * JavaScript
-* Supabase
+* Supabase (Auth + Database)
 
-## Setup
+## Run locally
 
-1. Open the project files
-2. Add your Supabase URL and anon key in the JS files
-3. Open `index.html` in your browser
+Open the project folder and run `index.html` in your browser.
+Make sure to add your Supabase URL and anon key in the JS files.
+
+## How it works
+
+Supabase handles authentication and database storage.
+When a user registers, they receive a confirmation email.
+After logging in, they can create articles which are saved in the database.
+The homepage fetches and displays all articles dynamically.
 
 ## Notes
 
-* Only logged-in users can create articles
-* All users can read articles
-* Project is kept simple on purpose
-:) :) :) 
+* Logged-out users can only view articles
+* Logged-in users can create articles
+* Project is kept simple and built without frameworks
